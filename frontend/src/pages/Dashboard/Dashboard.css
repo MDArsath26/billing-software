@@ -1,0 +1,222 @@
+/* --- Page Layout --- */
+.page-container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1600px; /* Prevents stretching on ultra-wide screens */
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a; /* Slate 900 */
+  margin: 0;
+}
+
+/* --- Stats Grid (Top Row) --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Stat Icons Colors */
+.stat-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.stat-icon.bg-green {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.stat-icon.bg-orange {
+  background-color: #ffedd5;
+  color: #ea580c;
+}
+
+.stat-icon.bg-purple {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+
+.stat-icon.bg-blue {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.stat-info h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b; /* Slate 500 */
+  margin: 0 0 0.25rem 0;
+}
+
+.stat-info p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b; /* Slate 800 */
+  margin: 0;
+  line-height: 1;
+}
+
+/* --- Content Grid (Chart & Low Stock) --- */
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Chart takes 2/3, List takes 1/3 */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* General Card Styling */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.card h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 1.5rem 0;
+}
+
+/* --- Low Stock List --- */
+.low-stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.low-stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.low-stock-item .font-medium {
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.low-stock-item .text-sm {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.stock-badge {
+  background-color: #fee2e2;
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* --- Utility Helpers (to match React classes) --- */
+.p-6 { padding: 1.5rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.flex { display: flex; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.items-center { align-items: center; }
+
+/* Chart Container Helper */
+.h-64 { height: 16rem; }
+.w-full { width: 100%; }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+.btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .dashboard-content-grid {
+    grid-template-columns: 1fr; /* Stack Chart and Low Stock list vertically */
+  }
+}
+
+@media (max-width: 640px) {
+  .page-container {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr; /* 1 column for stats on mobile */
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+}

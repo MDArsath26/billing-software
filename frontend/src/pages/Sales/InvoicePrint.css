@@ -1,0 +1,142 @@
+@media print {
+    @page {
+        size: A4;
+        margin: 20mm;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .print-container,
+    .print-container * {
+        visibility: visible;
+    }
+
+    .print-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.print-container {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 2rem;
+    /* Visible in dev mode for testing */
+    background: white;
+    color: #333;
+}
+
+.print-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.store-info h1 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: #111;
+}
+
+.store-info p {
+    margin: 0.2rem 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.invoice-info h2 {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    /* Blue accent */
+    margin: 0 0 0.5rem 0;
+    text-align: right;
+}
+
+.invoice-info table td {
+    padding: 0.2rem 0 0.2rem 1rem;
+    text-align: right;
+}
+
+.customer-section {
+    margin: 2rem 0;
+}
+
+.customer-section h3 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.print-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.print-table th {
+    background: #f3f4f6;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.print-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sku {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.print-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.totals-box {
+    width: 300px;
+}
+
+.totals-box .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.totals-box .row:last-child {
+    border-bottom: none;
+}
+
+.totals-box .grand-total {
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-top: 2px solid #333;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+.terms-section {
+    margin-top: 4rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+}

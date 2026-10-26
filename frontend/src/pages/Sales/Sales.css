@@ -1,0 +1,123 @@
+.badge-neutral {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* Invoice Form Styles */
+.invoice-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .invoice-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.invoice-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.invoice-items-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background-color: #f3f4f6;
+    border-bottom: 2px solid #e5e7eb;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.invoice-items-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.invoice-summary {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.summary-row.total {
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-top: 1px solid #d1d5db;
+    padding-top: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.product-search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 50;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 0.75rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.dropdown-item:hover {
+    background-color: #f9fafb;
+}
+
+.search-input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 0.75rem;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    padding-left: 2.5rem;
+    /* Space for icon */
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    color: #111827;
+}
+
+.input-wrapper input::placeholder {
+    color: #9ca3af;
+}
